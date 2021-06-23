@@ -1,8 +1,22 @@
 # Usage
 
-1. Customize `accounts.json` as desired.
-2. Run the program:
+First of all, customize `accounts.json` as desired.
 
-  ```
-  $ deno run -Ar --unstable mod.ts
-  ```
+```
+[{
+  "username": "...",
+  "password": "..."
+}]
+```
+
+Then, run the program:
+
+```
+$ deno run -Ar --unstable mod.ts
+```
+
+**Note**: it is possible an error related with browser binary is thrown, in case there is no one installed. To solve it:
+
+```
+$ PUPPETEER_PRODUCT=chrome deno run -A --unstable https://deno.land/x/puppeteer@9.0.1/install.ts
+```
