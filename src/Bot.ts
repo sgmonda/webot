@@ -155,9 +155,12 @@ export class Bot {
   //   return { browser, page };
   // }
 }
+
+const isHeadless = Deno.args.includes('--headless');
+
 const openBrowser = async (url: string): Promise<{ page: Page, browser: Browser }> => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: isHeadless,
     defaultViewport: { width: 1280, height: 800, isMobile: false },
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
