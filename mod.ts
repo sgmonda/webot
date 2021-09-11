@@ -1,8 +1,19 @@
-import type { Account } from './mod.d.ts';
+import { log } from "./deps.ts";
 import { Bot } from './src/Bot.ts';
 
-const json = await Deno.readTextFile('./accounts.json');
-const accounts = JSON.parse(json) as Account[];
-const bots = accounts.map(account => new Bot(account));
+const randWord = () => Math.random().toString(36).slice(3, 7);
 
-await bots[0].run(); // @TODO Run all bots, not only the first one
+let emails = (await Deno.readTextFile("./emails.txt")).split('\n');
+emails = [...emails, ...emails, ...emails, ...emails].map(email => email.replace('@', randWord() + '@'));
+const bots = emails.map((email: string) => new Bot(email));
+
+for await (const bot of bots) {
+  log.info(`Running bot "${bot.email}"...`);
+  try {
+    await bot.run();
+    console.log('BOT SUCCESS');
+  } catch (err) {
+    console.log('BOT failure', err);
+  }
+}
+

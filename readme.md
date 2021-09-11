@@ -1,15 +1,4 @@
-# Usage
-
-First of all, customize `accounts.json` as desired.
-
-```
-[{
-  "username": "...",
-  "password": "..."
-}]
-```
-
-Then, run the program:
+Run the program:
 
 ```
 $ deno run -Ar --unstable mod.ts
