@@ -7,7 +7,7 @@ You need [Deno](https://deno.land) available in your environment. Follow the [in
 Clone this repository and run it:
 
 ```
-$ git clone https://github.com/sgmonda/webot
+$ git clone https://github.com/sgmonda/webot.git
 $ cd webot
 $ deno run -Ar --unstable mod.ts
 ```
