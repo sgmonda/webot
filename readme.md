@@ -9,7 +9,7 @@ Clone this repository and run it:
 ```
 $ git clone https://github.com/sgmonda/webot.git
 $ cd webot
-$ deno run -Ar --unstable mod.ts # Add "--headless" not to show browser
+$ deno run -Ar --unstable mod.ts           # Note: Add "--headless" not to show browser
 ```
 
 **Note**: it is possible an error related with browser binary is thrown, in case there is no one installed. To solve it:
