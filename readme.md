@@ -1,6 +1,14 @@
-Run the program:
+### Dependencies
+
+You need [Deno](https://deno.land) available in your environment. Follow the [installation guide](https://deno.land/#installation) if you need it.
+
+### Usage
+
+Clone this repository and run it:
 
 ```
+$ git clone https://github.com/sgmonda/webot
+$ cd webot
 $ deno run -Ar --unstable mod.ts
 ```
 
